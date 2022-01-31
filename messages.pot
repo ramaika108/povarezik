@@ -1,0 +1,280 @@
+# Translations template for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-06-28 17:25+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: povarezik/recipes.py:82
+msgid ""
+"Required fields were not supplied, please check the input form and try "
+"again :)"
+msgstr ""
+
+#: povarezik/recipes.py:88
+msgid ""
+"The length of the description is too long, please move part of it to the "
+"next step or make it shorter :)"
+msgstr ""
+
+#: povarezik/recipes.py:92
+msgid ""
+"You did not supply any ingredients yet, please do so and post the recipe "
+"again :)"
+msgstr ""
+
+#: povarezik/recipes.py:114
+msgid ""
+"Your recipe was posted successfully, please wait for moderators to "
+"approve it :)"
+msgstr ""
+
+#: povarezik/recipes.py:183
+msgid ""
+"One of the images that you tried to upload was too large, please compress"
+" it or chose another images"
+msgstr ""
+
+#: povarezik/static/comments.js:72
+msgid "Show comments "
+msgstr ""
+
+#: povarezik/static/comments.js:81 povarezik/static/comments.js:140
+msgid "Cancel"
+msgstr ""
+
+#: povarezik/static/comments.js:81
+msgid "Comment on the recipe "
+msgstr ""
+
+#: povarezik/static/comments.js:140
+msgid "Reply"
+msgstr ""
+
+#: povarezik/static/comments.js:145
+msgid "Hide replies "
+msgstr ""
+
+#: povarezik/static/comments.js:147
+msgid "Show replies "
+msgstr ""
+
+#: povarezik/static/comments.js:151 povarezik/static/comments.js:174
+msgid "Report "
+msgstr ""
+
+#: povarezik/static/comments.js:217
+msgid "Your comment"
+msgstr ""
+
+#: povarezik/static/comments.js:220
+msgid "Comment text..."
+msgstr ""
+
+#: povarezik/static/comments.js:230
+msgid "Your name..."
+msgstr ""
+
+#: povarezik/static/comments.js:252
+msgid "Post your comment"
+msgstr ""
+
+#: povarezik/static/scripts.min.js:169
+#: povarezik/templates/recipes/post_recipe_form.html:77
+msgid "Ingredient name"
+msgstr ""
+
+#: povarezik/static/scripts.min.js:188
+#: povarezik/templates/recipes/post_recipe_form.html:108
+msgid "Instruction text"
+msgstr ""
+
+#: povarezik/static/scripts.min.js:189
+#: povarezik/templates/recipes/post_recipe_form.html:107
+#: povarezik/templates/recipes/post_recipe_form.html:116
+#: povarezik/templates/recipes/post_recipe_form.html:130
+msgid "Remove step"
+msgstr ""
+
+#: povarezik/static/scripts.min.js:190
+#: povarezik/templates/recipes/post_recipe_form.html:100
+#: povarezik/templates/recipes/post_recipe_form.html:122
+#: povarezik/templates/recipes/post_recipe_form.html:136
+msgid "Add an image"
+msgstr ""
+
+#: povarezik/static/scripts.min.js:191
+#: povarezik/templates/recipes/post_recipe_form.html:97
+#: povarezik/templates/recipes/post_recipe_form.html:119
+#: povarezik/templates/recipes/post_recipe_form.html:133
+msgid "Delete image"
+msgstr ""
+
+#: povarezik/templates/base.html:42
+msgid "POVAREZIK"
+msgstr ""
+
+#: povarezik/templates/base.html:43
+msgid "POVAREZIK - Website for your Vegeterian recipes"
+msgstr ""
+
+#: povarezik/templates/base.html:48
+msgid "Selected language"
+msgstr ""
+
+#: povarezik/templates/base.html:68
+msgid "Share"
+msgstr ""
+
+#: povarezik/templates/base.html:86
+msgid "Want to post your recipe?"
+msgstr ""
+
+#: povarezik/templates/base.html:91
+msgid "Have a suggestion, complain or something else?"
+msgstr ""
+
+#: povarezik/templates/base.html:91
+msgid "Contact us"
+msgstr ""
+
+#: povarezik/templates/base.html:97
+msgid "website made by"
+msgstr ""
+
+#: povarezik/templates/base.html:97
+msgid "Ezichestvo"
+msgstr ""
+
+#: povarezik/templates/recipes/demo.html:11
+msgid "Demonstration video"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:16
+msgid "Add your recipe"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:21
+msgid "Recipe name"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:26
+msgid "Select category"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:34
+#: povarezik/templates/recipes/recipes.html:56
+msgid "Ekadashi"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:39
+#: povarezik/templates/recipes/recipes.html:62
+msgid "Vegan"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:44
+msgid "Cooking time(mins)"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:48
+msgid "Language"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:55
+msgid "Author name"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:59
+msgid "Link to YouTube video"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:73
+#: povarezik/templates/recipes/recipe.html:16
+#: povarezik/templates/recipes/recipes.html:100
+msgid "Ingredients:"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:87
+msgid "Add next ingredient"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:94
+msgid "Description"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:95
+msgid ""
+"Please write a short description of your recipe...(eg. A traditional "
+"indian preparation...)"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:117
+msgid ""
+"Write your first instruction here...(eg. Mix all the dry ingredients in a"
+" bowl.)"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:131
+msgid ""
+"Write your second instruction here...(eg. Pour water into the bowl litle "
+"by litle and start mixing the dough.)"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:146
+msgid "Add next step"
+msgstr ""
+
+#: povarezik/templates/recipes/post_recipe_form.html:155
+#: povarezik/templates/recipes/recipes.html:15
+msgid "Post recipe"
+msgstr ""
+
+#: povarezik/templates/recipes/recipe.html:51
+#: povarezik/templates/recipes/recipes.html:109
+msgid "By:"
+msgstr ""
+
+#: povarezik/templates/recipes/recipe.html:61
+msgid "Share recipe"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:9
+msgid "Website for your Pure Vegeterian recipes"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:10
+msgid "(no registration needed to view or post recipes)"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:12
+msgid "See demo"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:25
+msgid "Search..."
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:34
+msgid "Categories"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:37
+msgid "All"
+msgstr ""
+
+#: povarezik/templates/recipes/recipes.html:48
+msgid "Filter"
+msgstr ""
+

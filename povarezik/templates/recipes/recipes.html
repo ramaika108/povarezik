@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block heading %}Povarezik{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+	<section class="home-page-banner">
+		<h2>{{ _('Website for your Pure Vegeterian recipes') }}</h2>
+		<p>{{ _('(no registration needed to view or post recipes)') }}</p>
+		<h2 class="demo">
+			<a href="{{ url_for('recipes.demo') }}">{{ _('See demo') }}</a>
+		</h2>	
+		<h2 class="post-recipe-one">
+			<a href="{{ url_for('recipes.post_recipe_form') }}">{{ _('Post recipe') }}</a>
+		</h2>
+	</section>
+</div>
+
+
+<section class="filters-section">
+	<div class="container">
+		<form id="recipe-search" action="POST">
+			<div id="search">
+				<input type="text" id="search-field" name="search-field" placeholder="{{ _('Search...') }}">
+				<div id="search-button">
+					<i class="fa fa-search"></i>
+				</div>
+			</div>
+		</form>
+
+		<form action="POST" id="categoriesForm">
+			<div class="categories">
+				<i class="fa fa-bars"></i>{{ _('Categories') }}:
+
+				<select id="categories" name="categories">
+					<option value="">{{ _('All') }}</option>
+					{% for category in categories %}
+					<option value="{{ category.id }}">{{ _(category.name) }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</form>
+
+		<div class="filter">
+
+			<div class="filter-button">
+				<i class="fa fa-filter"></i>{{ _('Filter') }}
+			</div>
+
+			<div class="filter-options">
+				<form id="filters" action="POST">
+					<div>
+						<label for="ekadashi">
+							<input type="checkbox" name="ekadashi" id="ekadashi">
+							{{ _('Ekadashi') }}
+						</label>
+					</div>
+					<div>
+						<label for="vegan">
+							<input type="checkbox" name="vegan" id="vegan">
+							{{ _('Vegan') }}
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="recipe-list-section">
+	<div class="container">
+		<div class="recipe-container">
+			
+			{% for recipe in recipes %}
+
+			<div class="list-item">
+				<h2 class="list-item-title">
+					<a href="{{ url_for('recipes.recipe', id=recipe.id) }}">
+						{{ recipe.title }}
+					</a>
+				</h2>
+				<div class="meta-info">
+					<div class="item-category">
+						{{ recipe.category_id }}
+					</div>
+					<ul class="bool">
+						{% if recipe.ekadashi %}
+							<li>Ekadashi</li>
+						{% endif %}
+						{% if recipe.vegan %}
+							<li>Vegan</li>
+						{% endif %}
+					</ul>
+				</div>
+				<a href="{{ url_for('recipes.recipe', id=recipe.id) }}" class="img-link">
+					<img src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw==" data-src="{{ url_for('static', filename='img/recipes/%s/1.png' % recipe.id) }}" alt="hedgie" class="img-responsive lazyload" onerror="this.src = '/static/img/_src/recipe_thumb.png';">
+				</a>
+					<div class="list-item-data">
+						<div class="list-item-data-description">
+							{{ recipe.description }}
+						</div>
+						<div class="list-item-data-ingredients">
+							{{ _('Ingredients:') }}
+							<ul>
+								{% for ingredient in recipe.ingredient_list.split(',') %}
+								<li>{{ ingredient }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<div class="author list-item-author">
+						{{ _('By:') }} {{ recipe.author }}
+					</div>
+			</div> 
+
+			{% endfor %}
+
+			<div id="noResults" class="site-alert no-recipes-alert">{{ _('No recipes matched your search.') }}</div>
+
+		</div>
+	</div>
+</section>
+
+</section>
+{% endblock %}
+

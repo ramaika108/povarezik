@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block heading %}Povarezik - {{ recipe.title }}{% endblock %}
+
+{% block content %}
+
+		<section class="recipe-section">
+			<div class="container">
+				<div class="recipe">
+					<h2 class="recipe-title">{{ recipe.title }}</h2>
+					<img src="{{ url_for('static', filename='img/recipes/%s/1.png' % recipe.id) }}" alt="Main image" class="img-responsive img-width povarezik-img" onerror="this.src = '/static/img/_src/recipe_thumb.png';">
+					<div class="recipe-text recipe-description">
+						{{ recipe.description }}
+					</div>
+					<div class="recipe-text recipe-ingredients">
+						<div class="recipe-ingredients-heading">{{ _('Ingredients:') }}</div>
+						<ul>
+
+							{% for ingredient in ingredients %}
+							<li>
+								<div class="ingredient-name">
+									{{ ingredient.name }}
+								</div>
+							</li>
+							{% endfor %}
+
+						</ul>
+					</div>
+					<div class="recipe-video">
+						{% if recipe.video_link %}
+						<div class="video">
+							<iframe width="560" height="315" src="{{ recipe.video_link }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						{% endif %}
+					</div>
+					<div class="recipe-steps">
+						<ul>
+
+							{% for step in steps %}
+							<li>
+								<div class="recipe-text recipe-step">
+									{{ step.text }}
+								</div>
+								<img src="{{ url_for('static', filename='img/recipes/%s/%s.png' % (recipe.id, loop.index+1)) }}" alt="Step image" class="img-responsive img-width povarezik-img" onerror="this.style.display = 'none';">
+							</li>
+							{% endfor %}
+
+						</ul>
+					</div>
+					<div class="author">
+						{{ _('By:') }}
+						{{ recipe.author }}
+					</div>
+					<div class="edit-recipe">
+						<a href="{{ url_for('recipes.edit_recipe', id=recipe.id) }}">
+							{{ _('Edit recipe') }}
+							<i class="fa fa-pencil"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="social">
+			<div class="container">
+				<div class="share-recipe">
+					{{ _('Share recipe') }}
+					<i class="fa fa-share-alt"></i>
+					<div class="likely likely-recipe space-around" data-url="https://ramaika108.github.io/" data-media="img/4.png" data-title="Recipe">
+						<div class="facebook" title="Share in Facebook"></div>
+						<div class="twitter" title="Share in Twitter"></div>
+						<div class="whatsapp" title="Share in Whatsapp"></div>
+						<div class="telegram" title="Share in Telegram"></div>
+						<div class="vkontakte" title="Share in Vkontakte"></div>
+					</div>
+				</div>
+			</div>
+	</section>
+
+	<div id="root"></div>
+
+{% endblock %}
+
+{% block more_scripts %}
+<script src="{{ url_for('static', filename='js/react.production.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/react-dom.production.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/comments.js') }}"></script>
+
+<script>
+	var recipeId = {{ recipe.id }}
+	ReactDOM.render(
+		React.createElement(Comments, { id: recipeId }),
+		document.getElementById('root')
+		);
+</script>
+
+{% endblock %}

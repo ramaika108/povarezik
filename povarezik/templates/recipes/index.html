@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Povarezik</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<header>
+		<div class="logo">
+			<a href="/">
+				<img src="img/_src/final_logo.png" alt="povarezik.ru">
+			</a>
+		</div>
+
+		<div id="lang">
+			<select name="language" id="language">
+				<option value="0">En</option>
+				<option value="1">Ru</option>
+			</select>
+		</div>
+
+		<h1>POVAREZIK</h1>
+
+	</header>
+
+	<div class="go-to-top d-none">
+		<i class="fa fa-angle-up"></i>
+	</div>
+
+	<div class="container text-center">
+		<section class="home-page-banner">
+			<h2>Website for your Pure Vegeterian recipes</h2>
+			<p>(no registration needed to view or post recipes)</p>
+			<h2 class="demo">
+			<a href="demo.html">See demo</a>
+		</h2>
+			<h2 class="post-recipe-one">
+				<a href="post-recipe.html">Post recipe</a>
+			</h2>
+<!-- 			<div class="video">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/NmcYXOwJdD0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+ -->		</section>
+	</div>
+
+
+	<section class="filters-section">
+		<div class="container">
+			<form id="recipe-search" action="POST">
+				<div id="search">
+					<input type="text" id="search-field" name="search-field" placeholder="Search...">
+					<div id="search-button">
+						<i class="fa fa-search"></i>
+					</div>
+				</div>
+			</form>
+
+			<form action="POST" id="categoriesForm">
+				<div class="categories">
+					<i class="fa fa-bars"></i>Categories:
+
+					<select id="categories" name="categories">
+						<option value="">All</option>
+						<option value="Bread">Bread</option>
+						<option value="Rice">Rice</option>
+						<option value="Soup">Soup</option>
+						<option value="Beans">Beans</option>
+						<option value="Vegetables">Vegetables</option>
+						<option value="Raitas">Raitas</option>
+						<option value="Chatni">Chatni</option>
+						<option value="Sweets">Sweets</option>
+						<option value="Drinks">Drinks</option>
+						<option value="Pastry">Pastry</option>
+					</select>
+				</div>
+			</form>
+
+			<div class="filter">
+
+				<div class="filter-button">
+					<i class="fa fa-filter"></i>Filter
+				</div>
+
+				<div class="filter-options">
+					<form id="filters" action="POST">
+						<div>
+							<label for="ekadashi">
+								<input type="checkbox" name="ekadashi" id="ekadashi">
+								Ekadashi
+							</label>
+						</div>
+						<div>
+							<label for="vegan">
+								<input type="checkbox" name="vegan" id="vegan">
+								Vegan
+							</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="recipe-list-section">
+		<div class="container">
+			<div class="card-columns">
+
+				<div class="list-item card">
+					<h2 class="list-item-title">
+						<a href="recipe.html">
+							Ezik cooked
+						</a>
+					</h2>
+					<div class="meta-info">
+						<div class="item-category">
+							Soup
+						</div>
+						<ul class="bool">
+							<li>Ekadashi</li>
+							<li>Vegan</li>
+						</ul>
+					</div>
+					<a href="recipe.html">
+						<img src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw==" data-src="img/1.jpg" alt="hedgie" class="img-responsive img-width lazyload">
+					</a>
+					<div class="list-item-data">
+						<div class="list-item-data-description">
+							A dish from ancient Russia Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Заманивший это маленький заглавных, толку, инициал скатился диких города он путь домах, строчка приставка власти снова до? Букв, собрал, реторический.
+						</div>
+						<div class="list-item-data-ingredients">
+							Ingredients:
+							<ul>
+								<li>Hedgie 1 kg</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>
+					</div>
+					<div class="author">
+						By: Author
+					</div>
+				</div>
+
+				<div class="list-item card">
+					<h2 class="list-item-title">
+						<a href="recipe.html">
+							Dinozor electrified
+						</a>
+					</h2>
+					<div class="meta-info">
+						<div class="item-category">
+							Soup
+						</div>
+						<ul class="bool">
+							<li>Ekadashi</li>
+						</ul>
+					</div>
+					<a href="recipe.html">
+						<img src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw==" data-src="img/2.png" alt="dino" class="img-responsive img-width lazyload">
+					</a>
+					<div class="list-item-data">
+						<div class="list-item-data-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing, elit. Numquam deserunt aliquam non, animi sequi, dolore commodi consectetur magni molestias totam culpa error possimus vero, ullam molestiae, fugiat. Sapiente, eligendi, pariatur.
+						</div>
+						<div class="list-item-data-ingredients">
+							Ingredients:
+							<ul>
+								<li>Dino</li>
+								<li>Electric socket</li>
+								<li>Bait</li>
+							</ul>
+						</div>
+					</div>
+					<div class="author">
+						By: Author
+					</div>
+				</div>
+
+				<div class="list-item card">
+					<h2 class="list-item-title">
+						<a href="recipe.html">
+							GNU penguin
+						</a>
+					</h2>
+					<div class="meta-info">
+						<div class="item-category">
+							Rice
+						</div>
+						<ul class="bool">
+							<li>Vegan</li>
+						</ul>
+					</div>
+					<a href="recipe.html">
+						<img src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw==" data-src="img/3.jpg" alt="hedgie" class="img-responsive img-width lazyload">
+					</a>
+					<div class="list-item-data">
+						<div class="list-item-data-description">
+							Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Modi ea odio perspiciatis aliquam voluptate quas blanditiis nobis cumque perferendis aut fugit magnam fuga, soluta laborum harum quis minus voluptatem molestias.
+						</div>
+						<div class="list-item-data-ingredients">
+							Ingredients:
+							<ul>
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>
+					</div>
+					<div class="author">
+						By: Author
+					</div>
+				</div>
+
+				<div class="list-item card">
+					<h2 class="list-item-title">
+						<a href="recipe.html">
+							Sakobatto sloloni
+						</a>
+					</h2>
+					<div class="meta-info">
+						<div class="item-category">
+							Soup
+						</div>
+						<ul class="bool">
+						</ul>
+					</div>
+					<a href="recipe.html">
+						<img src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw==" data-src="img/4.png" alt="sakabato" class="img-responsive img-width lazyload">
+					</a>
+					<div class="list-item-data">
+						<div class="list-item-data-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quaerat dolore aspernatur in facere error rem ut dolor at expedita suscipit perspiciatis, vel voluptatum, molestias, ex accusamus reprehenderit soluta minima?
+						</div>
+						<div class="list-item-data-ingredients">
+							Ingredients:
+							<ul>
+								<li>Dino</li>
+								<li>Electric socket</li>
+								<li>Bait</li>
+							</ul>
+						</div>
+					</div>
+					<div class="author">
+						By: Author
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer class="main-footer">
+		<div class="item-social">
+			<div class="item-social-text">
+				Share <div class="fa fa-share-alt" title="Share"></div>
+			</div>
+			<div class="likely likely-custom" data-url="https://ramaika108.github.io/" data-media="img/_src/pattern.jpg" data-title="Povarezik">
+				<div class="facebook" title="Share in Facebook"></div>
+				<div class="twitter" title="Share in Twitter"></div>
+				<div class="whatsapp" title="Share in Whatsapp"></div>
+				<div class="telegram" title="Share in Telegram"></div>
+				<div class="vkontakte" title="Share in Vkontakte"></div>
+			</div>
+		</div>
+		<div class="post-recipe-two">
+			<div class="blur-wrapper"></div>
+			<span><a href="post-recipe.html">Want to post your recipe?</a></span>
+		</div>
+		<div class="contact-us">
+			Have a suggestion, complain or something else? <a href="mailto:support@povarezik.com">Contact us</a>
+		</div>
+		<div class="copyright">
+			© POVAREZIK 2021
+			<br>
+			<span>
+				website made by <a href="https://ramaika108.github.io/">Ezichestvo</a>
+			</span>
+		</div>
+	</footer>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

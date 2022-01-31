@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block header %}
+Povarezik - add recipe
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<section class="recipe-form-section">
+
+		<form id="recipe-form" method="POST" enctype="multipart/form-data" autocomplete="off">
+
+			<div class="options">
+
+				<h2 class="text-center">{{ _('Add your recipe') }}</h2>
+
+				<div class="form-row">
+
+					<div class="form-group col-12">
+						<input type="text" class="form-control" name="recipeName" id="recipeName" placeholder="{{ _('Recipe name') }}..." required>
+					</div>
+
+					<div class="form-group col-12">
+						<select class="form-control" name="recipe-category" id="recipe-category" required>
+							<option value="" selected disabled hidden>{{ _('Select category') }}...</option>
+							{% for category in categories %}
+								<option value="{{ category.id }}">{{ _(category.name) }}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<div class="form-group col-6">
+						<label for="ekadashi">{{ _('Ekadashi') }}:</label>
+						<input type="checkbox" class="form-control" name="ekadashi" id="ekadashi" value="1">
+					</div>	
+
+					<div class="form-group col-6">
+						<label for="vegan">{{ _('Vegan') }}:</label>
+						<input type="checkbox" class="form-control" name="vegan" id="vegan" value="1">
+					</div>
+
+					<div class="form-group col-7">
+						<input type="number" class="form-control" name="cooking-time" id="cooking-time" placeholder="{{ _('Cooking time(mins)') }}...">
+					</div>
+					<div class="form-group col-5">
+						<select class="form-control" name="recipeLanguage" id="recipeLanguage" required>
+							<option value=""selected disabled hidden>{{ _('Language') }}...</option>
+							<option value="1">En</option>
+							<option value="2">Ru</option>
+						</select>
+					</div>
+
+					<div class="form-group col-12">
+						<input class="form-control" type="text" name="author" id="author" placeholder="{{ _('Author name') }}..." autocomplete="on">
+					</div>
+
+					<div class="form-group col-12">
+						<input class="form-control" type="text" name="video-link" id="video-link" placeholder="{{ _('Link to YouTube video') }}...">
+						<div class="video video-post">
+							<iframe width="560" height="315" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="ingredients">
+
+				<div class="ingredients-label">{{ _('Ingredients:') }}</div>
+				<div class="form-row align-items-center">
+
+					<div class="form-group col-10">
+						<input type="text" class="form-control" placeholder="{{ _('Ingredient name') }}..." name="ingredient[]" autocomplete="off" id="ingName" required>
+					</div>
+					<div class="ingredient-delete-button form-group col-2 form-control d-none">
+						<i class="fa fa-trash"></i>
+					</div>
+
+					<div id="last-ingredient"></div>
+
+				</div>
+				<div id="ingredient-add-button">
+					{{ _('Add next ingredient') }} <i class="fa fa-plus"></i>
+				</div>
+
+			</div>
+
+			<div class="description">
+
+				<label for="description">{{ _('Description') }}:</label>
+				<textarea name="description" id="description" rows="5" maxlength="900" class="form-control" placeholder="{{ _('Please write a short description of your recipe...(eg. A traditional indian preparation...)') }}" required></textarea>
+				<div class="delete-photo photo-button d-none" id="delete-photo-button">
+					{{ _('Delete image') }} <i class="fa fa-close"></i>
+				</div>
+				<div class="add-photo photo-button" id="add-photo-button">
+					{{ _('Add an image') }} <i class="fa fa-camera"></i>
+				</div>
+				<input type="file" name="image[]" accept="image/*" class="d-none">
+			</div>
+
+			<!-- Text for translations start -->
+			<div class="d-none">
+			<span>{{ _('Remove step') }}</span>
+			<span>{{ _('Instruction text') }}...</span>
+			</div>
+			<!-- Text for translations end -->
+			<div class="steps">
+				<ol>
+
+					<li class="step">
+
+						<div class="remove-step">{{ _('Remove step') }} <i class="fa fa-trash"></i></div>
+						<textarea name="step[]" id="step[]" rows="5" maxlength="900" class="form-control" placeholder="{{ _('Write your first instruction here...(eg. Mix all the dry ingredients in a bowl.)') }}"></textarea>
+						<div class="delete-photo photo-button d-none">
+							{{ _('Delete image') }} <i class="fa fa-close"></i>
+						</div>
+						<div class="add-photo photo-button">
+							{{ _('Add an image') }} <i class="fa fa-camera"></i>
+						</div>
+						<input type="file" name="image[]" accept="image/*" class="d-none">
+
+					</li>
+
+					<li class="step">
+
+						<div class="remove-step">{{ _('Remove step') }} <i class="fa fa-trash"></i></div>
+						<textarea name="step[]" id="step[]" rows="5" maxlength="900" class="form-control" placeholder="{{ _('Write your second instruction here...(eg. Pour water into the bowl litle by litle and start mixing the dough.)') }}"></textarea>
+						<div class="delete-photo photo-button d-none">
+							{{ _('Delete image') }} <i class="fa fa-close"></i>
+						</div>
+						<div class="add-photo photo-button">
+							{{ _('Add an image') }} <i class="fa fa-camera"></i>
+						</div>
+						<input type="file" name="image[]" accept="image/*" class="d-none">
+
+					</li>
+
+					<div id="last-step"></div>
+
+					<div class="text-center">
+						<div id="step-add-button">
+							{{ _('Add next step') }} <i class="fa fa-plus"></i>
+						</div>
+					</div>
+
+				</ol>	
+			</div>
+
+			<div class="text-center">
+
+				<div id="form-alert"></div>
+
+				<progress id="progressbar" value="0" max="100" class="progressbar"></progress>
+				<button type="submit" id="save-button">
+					{{ _('Post recipe') }}
+				</button>
+
+			</div>
+
+		</form>
+	</section>
+
+
+</div>
+
+{% endblock %}
